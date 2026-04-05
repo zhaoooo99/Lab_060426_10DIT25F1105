@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | Web Design Technology</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background-color: #f8f9fa;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            width: 95%;
+            max-width: 600px;
+            margin: 20px auto;
+            background: #fff;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+
+        .header {
+            background-color: #007bff;
+            color: white;
+            padding: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .header h1 {
+            margin: 0;
+            font-size: 18px;
+        }
+
+        .home-btn {
+            color: white;
+            font-size: 20px;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        .home-btn:hover {
+            color: #ffd700;
+        }
+
+        .nav {
+            display: flex;
+            background-color: #343a40;
+            justify-content: space-around;
+        }
+
+        .nav button {
+            flex: 1;
+            background: #343a40;
+            color: white;
+            padding: 12px;
+            border: none;
+            font-size: 14px;
+            cursor: pointer;
+            border-bottom: 3px solid transparent;
+        }
+
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 20px;
+            cursor: pointer;
+        }
+
+        .content {
+            text-align: center;
+            padding: 25px;
+        }
+
+        #logo {
+            width: 180px;
+            margin-bottom: 15px;
+        }
+
+        .contact-card {
+            text-align: left;
+            background: #fdfdfd;
+            padding: 20px;
+            border-radius: 8px;
+            border: 1px solid #eee;
+            margin-top: 15px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 12px;
+            text-decoration: none;
+            color: #333;
+        }
+
+        .contact-item i {
+            color: #007bff;
+            width: 30px;
+            font-size: 18px;
+        }
+
+        .link-text {
+            color: #007bff;
+            font-weight: bold;
+            text-decoration: underline;
+            margin-left: 5px;
+        }
+
+        .footer {
+            background-color: #007bff;
+            color: white;
+            text-align: center;
+            padding: 12px;
+            font-size: 11px;
+        }
+
+        @media (max-width: 768px) {
+            .nav {
+                flex-direction: column;
+                display: none;
+            }
+
+            .nav.active {
+                display: flex;
+            }
+
+            .menu-toggle {
+                display: block;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <header class="header">
+            <button class="menu-toggle"><i class="fas fa-bars"></i></button>
+            <h1>PSP Contact Hub</h1>
+            <a href="index.html" class="home-btn"><i class="fas fa-house"></i></a>
+        </header>
+
+        <nav class="nav">
+            <button class="nav-btn">About</button>
+            <button class="nav-btn">Services</button>
+            <button class="nav-btn">Register</button>
+            <button class="nav-btn" style="border-bottom-color: white;">Contact</button>
+        </nav>
+
+        <main class="content">
+            <img src="images/Logo_PSP.png" alt="PSP Logo" id="logo">
+            <p><i>"To become an excellent TVET institution."</i></p>
+
+            <div class="contact-card">
+                <a href="https://wa.me/6045383322" class="contact-item">
+                    <i class="fab fa-whatsapp"></i> WhatsApp: <span class="link-text">Send Message</span>
+                </a>
+                <a href="tel:+6045383322" class="contact-item">
+                    <i class="fas fa-phone"></i> Call: <span class="link-text">+604-538 3322</span>
+                </a>
+                <a href="mailto:XXX@gmail.com" class="contact-item">
+                    <i class="fas fa-envelope"></i> Email: <span class="link-text">XXX@gmail.com</span>
+                </a>
+            </div>
+        </main>
+
+        <footer class="footer">
+            © 2026 <strong>NG XU ZHAO | 10DIT25F1105 |</strong><br>JTMK Politeknik Seberang Perai
+        </footer>
+    </div>
+
+    <script>
+        $(document).ready(function () {
+            // 1. Efek FadeIn semasa page load
+            $("#logo").hide().fadeIn(2000);
+
+            // 2. Click Alert untuk Social Button (jika ada)
+            $(".contact-item").click(function () {
+                console.log("Contact link clicked!");
+            });
+
+            // 3. Hamburger Menu Toggle (Responsive)
+            $(".menu-toggle").click(function () {
+                $(".nav").stop().slideToggle();
+            });
+
+            // 4. Hover Effect pada Link Text
+            $(".contact-item").hover(function () {
+                $(this).find(".link-text").css("color", "#ff6600");
+            }, function () {
+                $(this).find(".link-text").css("color", "#007bff");
+            });
+        });
+    </script>
+
+</body>
+
+</html>
